@@ -8,9 +8,10 @@ Permite gestionar la recepción de equipos, centralizando la información y mejo
 ## Funcionalidades principales
 
 * Gestión (ABM) de Usuario, Cliente, Equipo, Orden de Trabajo.
-
-<img width="620" height="430" alt="gestionClientes" src="https://github.com/user-attachments/assets/9e0d0032-7ba5-4ea5-8328-24510a8e6b35" />
-<img width="620" height="430" alt="gestionEquipos" src="https://github.com/user-attachments/assets/ef822b20-a040-4d96-bcbb-f76467cd4813" />
+* 
+<img width="600" height="400" alt="principal" src="https://github.com/user-attachments/assets/efeb4e30-e6fe-403c-a3d5-e7074274cc83" />
+<img width="600" height="400" alt="gestionClientes" src="https://github.com/user-attachments/assets/9e0d0032-7ba5-4ea5-8328-24510a8e6b35" />
+<img width="600" height="400" alt="gestionEquipos" src="https://github.com/user-attachments/assets/ef822b20-a040-4d96-bcbb-f76467cd4813" />
 
 * Creación de Orden de Trabajo y seguimiento de las distintas etapas (pendiente, concluido, entregado).
 
