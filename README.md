@@ -1,1 +1,26 @@
-# Sistema_Gestion_Ordenes_Trabajo
+# Proyecto final de la Lic. en Sistemas de la Universidad del Salvador
+
+## Sistema de Gestión de Órdenes de Trabajo - SGOT
+
+Sistema desarrollado para un laboratorio de electrónica (reparación de equipos, calibración, etc), cuyo principal objetivo es optimizar los tiempos de entrega.
+Permite gestionar la recepción de equipos, centralizando la información y mejorando el control operativo.
+
+## Funcionalidades principales
+
+* Gestión (ABM) de Usuario, Cliente, Equipo, Orden de Trabajo.
+
+<img width="618" height="431" alt="gestionClientes" src="https://github.com/user-attachments/assets/9e0d0032-7ba5-4ea5-8328-24510a8e6b35" />
+<img width="519" height="391" alt="gestionEquipos" src="https://github.com/user-attachments/assets/ef822b20-a040-4d96-bcbb-f76467cd4813" />
+
+* Creación de Orden de Trabajo y seguimiento de las distintas etapas (pendiente, concluido, entregado).
+
+<img width="454" height="290" alt="gestionOrdenTrabajoPendiente" src="https://github.com/user-attachments/assets/45188163-89dc-42d5-b633-8e0129bfb39c" />
+<img width="479" height="306" alt="gestioOrdenTrabajoConcluido" src="https://github.com/user-attachments/assets/34dd623c-77dd-46f4-995d-dcdf5259d4ca" />
+<img width="469" height="300" alt="gestionOrdenTrabajoEntregado" src="https://github.com/user-attachments/assets/0a0bf0f1-6722-48f4-8594-2689c1e8a15a" />
+
+
+
+
+* Validaciones de datos y reglas de negocio.
+* Consultas y reportes según distintos criterios.
+* Manejo de estados y flujos del sistema
