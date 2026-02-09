@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idOrden" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idEquipo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idCliente" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="estado" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fr1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fr2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fc1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fc2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fe1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fe2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="whereid" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{idOrden} != null ? " idOrden = '" + $P{idOrden}+ "' AND" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="whereidequipo" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{idEquipo} != null ? " O.idEquipo = '" + $P{idEquipo}+ "' AND E.idEquipo = '" 
++$P{idEquipo}+ "' AND" : " O.idEquipo = E.idEquipo AND ")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="whereidcliente" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{idCliente} != null ? " E.idCliente = '" + $P{idCliente}+ "' AND CL.idCliente"+
+"='" +$P{idCliente}+ "' AND" : " E.idCliente = CL.idCliente AND ")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="whereestado" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{estado} != null ? " O.estado = '" + $P{estado} + "' AND" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wherefr1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{fr1} != null ? " AND fechaRecep >= '" + $P{fr1}+ "'" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wherefr2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{fr2} != null ? " AND fechaRecep <= '" + $P{fr2}+ "'" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wherefc1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{fc1} != null ? " AND fechaTrabajo >= '" + $P{fc1}+ "'" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wherefc2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{fc2} != null ? " AND fechaTrabajo <= '" + $P{fc2}+ "'" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wherefe2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{fe2} != null ? " AND fechaEntrega <= '" + $P{fe2}+ "'" : "")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wherefe1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[($P{fe1} != null ? " AND fechaEntrega >= '" + $P{fe1}+ "'" : "")]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM ordenes AS O, equipos AS E, clientes AS CL, ciudades AS CI, provincias AS P, usuarios AS U WHERE $P!{whereid} $P!{whereidequipo} $P!{whereidcliente} CL.idCiudad = CI.idCiudad AND 
+CI.idProvincia = P.idProvincia AND $P!{whereestado} O.idUsuario = U.idUsuario $P!{wherefr1} $P!{wherefr2} $P!{wherefc1} $P!{wherefc2} $P!{wherefe1} $P!{wherefe2} ORDER BY idOrden]]>
+	</queryString>
+	<field name="idOrden" class="java.lang.Integer"/>
+	<field name="idUsuario" class="java.lang.Integer"/>
+	<field name="idEquipo" class="java.lang.Integer"/>
+	<field name="fechaRecep" class="java.sql.Date"/>
+	<field name="fechaLimite" class="java.sql.Date"/>
+	<field name="fechaTrabajo" class="java.sql.Date"/>
+	<field name="fechaEntrega" class="java.sql.Date"/>
+	<field name="remito" class="java.lang.String"/>
+	<field name="observacion" class="java.lang.String"/>
+	<field name="costoTrabajo" class="java.lang.Integer"/>
+	<field name="version" class="java.sql.Timestamp"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="nroSerie" class="java.lang.String"/>
+	<field name="marca" class="java.lang.String"/>
+	<field name="modelo" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="idCliente" class="java.lang.Integer"/>
+	<field name="nroEquipo" class="java.lang.String"/>
+	<field name="dni" class="java.lang.String"/>
+	<field name="apellido" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="idCiudad" class="java.lang.Integer"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="password" class="java.lang.String"/>
+	<field name="mail" class="java.lang.String"/>
+	<field name="responsable" class="java.lang.String"/>
+	<field name="cp" class="java.lang.String"/>
+	<field name="ciudad" class="java.lang.String"/>
+	<field name="idProvincia" class="java.lang.Integer"/>
+	<field name="provincia" class="java.lang.String"/>
+	<field name="usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="82" y="16" width="421" height="43"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="28" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Informe de Orden de Trabajo:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="58" height="79"/>
+				<imageExpression><![CDATA["C:\\Users\\Marcos\\Documents\\NetBeansProjects\\SistemaOT\\src\\Imagenes\\Report.gif"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="78" width="802" height="1"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[idOrden]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="2" width="50" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[idCliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[nroEquipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="555" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[fechaRecep]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="2" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[fechaLimite]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="802" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="662" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idOrden}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="50" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nroEquipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="555" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="250" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fechaRecep}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="350" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fechaLimite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="662" y="3" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="682" y="34" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="34" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="34" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="21" width="802" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
