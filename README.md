@@ -75,4 +75,3 @@ Permite gestionar la recepción de equipos, centralizando la información y mejo
 * Automatización de pruebas
 * Escalabilidad del sistema
 
-### Enlace
